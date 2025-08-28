@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster Pro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="themeToggleButton" class="theme-toggle-button">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <div class="container">
+        <h1 class="text-4xl font-extrabold text-center mb-8">
+            TaskMaster Pro <span class="emoji">✨</span>
+        </h1>
+
+        <div class="input-group flex-col md:flex-row">
+            <input type="text" id="newTaskInput" placeholder="Add a new task..." class="main-input focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
+            <select id="newTaskPriority" class="focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
+                <option value="medium">Priority: Medium</option>
+                <option value="low">Priority: Low</option>
+                <option value="high">Priority: High</option>
+            </select>
+            <input type="date" id="newTaskDueDate" class="focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
+            <button id="addTaskBtn">Add Task</button>
+        </div>
+
+        <div class="filter-buttons">
+            <button id="filterAll" class="active">All</button>
+            <button id="filterActive">Active</button>
+            <button id="filterCompleted">Completed</button>
+        </div>
+
+        <div class="sort-dropdown-group">
+            <label for="sortOptions">Sort By:</label>
+            <select id="sortOptions" class="focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
+                <option value="none">None</option>
+                <option value="priority-asc">Priority (Low to High)</option>
+                <option value="priority-desc">Priority (High to Low)</option>
+                <option value="date-early">Due Date (Early to Late)</option>
+                <option value="date-late">Due Date (Late to Early)</option>
+            </select>
+        </div>
+
+        <ul id="taskList" class="space-y-4">
+        </ul>
+
+        <button id="clearCompletedBtn" class="clear-completed-btn">Clear Completed</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
